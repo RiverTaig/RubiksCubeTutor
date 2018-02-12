@@ -1,0 +1,1094 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rubiks Cube Tutor</title>
+
+    <style>
+        /*body{
+            font-family : Arial, Helvetica, sans-serif;
+        }*/
+        .arrowUpper1 {
+            position: absolute;
+            top: 69px;
+            left: 97px;
+            transform: rotate(-12deg) skew(-13deg,-3deg);
+            /* transform: rotatey(10deg); */
+            width: 97px;
+            height: 26px;
+        }
+
+        .arrowUpper2 {
+            position: absolute;
+            top: 60px;
+            left: 39px;
+            transform: rotate(33deg) skew(35deg,3deg);
+            /* transform: rotatey(10deg); */
+            width: 67px;
+            height: 25px;
+        }
+        .arrowUpperPrime1 {
+            position: absolute;
+            top: 66px;
+            left: 102px;
+            transform: rotate(168deg) skew(-13deg,-3deg);
+            /* transform: rotatey(10deg); */
+            width: 104px;
+            height: 26px;
+            /* display: none; */
+        }
+
+        .arrowUpperPrime2 {
+            position: absolute;
+            top: 62px;
+            left: 42px;
+            transform: rotate(213deg) skew(37deg,4deg);
+            /* transform: rotatey(10deg); */
+            width: 65px;
+            height: 23px;
+            /* display: none;*/
+        }
+
+        .arrowLeft1 {
+
+            position: absolute;
+            top: 41px;
+            left: 57px;
+            transform: rotate(213deg) skew(-42deg,0deg);
+            width: 65px;
+            height: 23px;
+            
+        }
+
+        .arrowLeft2 {
+            position: absolute;
+            top: 112px;
+            left: 65px;
+            transform: rotate(273deg) skew(16deg,-2deg);
+            width: 104px;
+            height: 26px;
+        }
+        .arrowLeftPrime1 {
+            position: absolute;
+            top: 38px;
+            left: 53px;
+            transform: rotate(35deg) skew(-35deg,1deg);
+            /* transform: rotatey(10deg); */
+            width: 67px;
+            height: 25px;
+        }
+
+        .arrowLeftPrime2 {
+            position: absolute;
+            top: 109px;
+            left: 65px;
+            transform: rotate(91deg) skew(17deg,0deg);
+            /* transform: rotatey(10deg); */
+            width: 106px;
+            height: 28px;
+        }
+
+
+        .arrowFront1 {
+            position: absolute;
+            top: 44px;
+            left: 96px;
+            transform: rotate(-189deg) skew(51deg,-3deg);
+            /* transform: rotatey(10deg); */
+            width: 89px;
+            height: 23px;
+        }
+
+        .arrowFront2 {
+            position: absolute;
+            top: 104px;
+            left: 54px;
+            transform: rotate(137deg) skew(8deg,-47deg);
+            /* transform: rotatey(10deg); */
+            width: 75px;
+            height: 25px;
+        }
+
+        .arrowFrontPrime1 {
+            position: absolute;
+            top: 43px;
+            left: 99px;
+            transform: rotate(-56deg) skew(0deg,44deg);
+            /* transform: rotatey(10deg); */
+            width: 73px;
+            height: 29px;
+        }
+
+        .arrowFrontPrime2 {
+            position: absolute;
+            top: 112px;
+            left: 38px;
+            transform: rotate(270deg) skew(-37deg,0deg);
+            /* transform: rotatey(10deg); */
+            width: 106px;
+            height: 25px;
+        }
+
+
+        .arrowRight1 {
+            position: absolute;
+            top: 25px;
+            left: 106px;
+            transform: rotate(41deg) skew(-35deg,-16deg);
+            /* transform: rotatey(10deg); */
+            width: 70px;
+            height: 28px;
+        }
+
+        .arrowRight2 {
+            position: absolute;
+            top: 89px;
+            left: 129px;
+            transform: rotate(88deg) skew(18deg,5deg);
+            /* transform: rotatey(10deg); */
+            width: 95px;
+            height: 31px;
+        }
+
+        .arrowRightPrime1 {
+            position: absolute;
+            top: 34px;
+            left: 117px;
+            transform: rotate(205deg) skew(-53deg,1deg);
+            /* transform: rotatey(10deg); */
+            width: 62px;
+            height: 20px;
+        }
+
+        .arrowRightPrime2 {
+            position: absolute;
+            top: 96px;
+            left: 131px;
+            transform: rotate(266deg) skew(15deg,5deg);
+            /* transform: rotatey(10deg); */
+            width: 90px;
+            height: 28px;
+            /* display: none; */
+        }
+
+
+
+
+        .arrowDown1 {
+            position: absolute;
+            top: 130px;
+            left: 104px;
+            transform: rotate(165deg) skew(-16deg,-6deg);
+            /* transform: rotatey(10deg); */
+            width: 94px;
+            height: 28px;
+            /* display: none; */
+        }
+
+        .arrowDown2 {
+            position: absolute;
+            top: 123px;
+            left: 47px;
+            transform: rotate(225deg) skew(44deg,0deg);
+            /* transform: rotatey(10deg); */
+            width: 62px;
+            height: 28px;
+            /* display: none; */
+        }
+
+
+        .arrowDownPrime1 {
+            position: absolute;
+            top: 133px;
+            left: 100px;
+            transform: rotate(351deg) skew(-10deg,-11deg);
+            /* transform: rotatey(10deg); */
+            width: 89px;
+            height: 25px;
+            /* display: none; */
+        }
+        .arrowDownPrime2 {
+            position: absolute;
+            top: 119px;
+            left: 39px;
+            transform: rotate(398deg) skew(37deg,5deg);
+            /* transform: rotatey(10deg); */
+            width: 70px;
+            height: 28px;
+            /* display: none; */
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .tdColor0 {
+            background-color: white;
+        }
+
+        .tdColor1 {
+            background-color: red;
+        }
+
+        .tdColor2 {
+            background-color: orange;
+        }
+
+        .tdColor3 {
+            background-color: lime;
+        }
+
+        .tdColor4 {
+            background-color: blue;
+        }
+
+        .tdColor5 {
+            background-color: yellow;
+        }
+
+        .tdSelected {
+            border: 4px solid black;
+        }
+
+        html, body {
+            width: 100%;
+            height: 98%;
+            margin: 0;
+        }
+
+        canvas {
+            /*zoom: 50%;*/
+        }
+
+        .btnOrientButton {
+            width: 50px;
+        }
+        /*.dijitButton.myCSSClass {
+          display: block;
+        }*/
+
+        .dijitButton.myCSSClass .dijitButtonNode {
+            /*width: 100%;*/
+        }
+
+        div.fixed {
+            position: fixed;
+            top: 120px;
+            left: 850px;
+        }
+
+        div.revealHiddenFaces {
+            position: relative;
+            left: 5px;
+            top: 15px;
+        }
+
+        div.divCubeMover {
+            position: relative;
+            left: 325px;
+            top: -350px;
+        }
+
+        table {
+            display: inline-block;
+            border-spacing: 0px;
+        }
+
+        th {
+            font-size: small;
+            color: dimgray;
+            letter-spacing: 2px;
+        }
+
+        .firstLetter {
+            color: black;
+            font-size: 1.5em;
+            /*font-weight: bolder;*/
+            /*text-decoration: underline;*/
+            /*font-size: large;*/
+        }
+
+        td {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #585858;
+            text-align: center;
+            /*font-size: 16px;*/
+        }
+
+        #tabUp td {
+            background-color: white;
+        }
+
+        .rcTitleTD {
+            opacity: .5,;
+        }
+
+        #tabFront td {
+            background-color: red;
+        }
+
+        #divTutorial {
+            font-size: large;
+            color: black;
+        }
+
+        #tabRight td {
+            background-color: blue;
+        }
+
+        #tabBack td {
+            background-color: orange;
+        }
+
+        #tabLeft td {
+            background-color: green;
+        }
+
+        .cubeStep {
+            background: linear-gradient(to right, #dddddd, #888888);
+            width: 100%;
+            padding: 5px;
+            margin: 10px 0px 10px 0px;
+        }
+
+
+
+
+        #divRubiksCubetitle {
+            color: #5615ef;
+            font-weight: bold;
+            /* position: absolute; */
+            /* left: 515px; */
+            /* right: 200px; */
+            font-size: 2.5vw;
+            font-style: italic;
+            z-index: 1;
+            width: 100%;
+            /* margin: 0 auto; */
+            -webkit-text-stroke: .10vw white;
+            text-shadow: .1vw 2px 0 #999, -1px -1px 0 #999, 1px -1px 0 #999, -1px 1px 0 #999, 1px 1px 0 #999;
+        }
+
+        #divRubiksCubeSubtitle {
+            /*position: absolute;*/
+            /* left: 550px; */
+            /*right: 25px;
+            top: 80px;*/
+            letter-spacing: 9px;
+            /* width: 100%; */
+            text-align: center;
+            color: #000000;
+            font-weight: bolder;
+            width: 100%;
+            margin: -5px auto;
+            /* position: absolute; */
+            font-style: italic;
+            font-size: 1.0vw;
+        }
+
+        .divImgRoo {
+            position: absolute;
+            zoom: 65%;
+            top: 5px;
+            left: 15px;
+            z-index: -1;
+        }
+
+        .divImgRooRight {
+            position: absolute;
+            zoom: 65%;
+            top: 5px;
+            right: 15px;
+            z-index: -1;
+        }
+
+        #divTabTitle {
+            position: absolute;
+            top: 10px;
+            z-index: -1;
+            /* left: 550px; */
+            right: 30px;
+            color: black;
+        }
+
+        #tabTitle {
+            /*height:100px;*/
+        }
+
+        #tabDown td {
+            background-color: yellow;
+        }
+
+        #divTheAlhorithm {
+            font-size: xx-large;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            position: absolute;
+            bottom: 0px;
+        }
+
+        div#dijit_layout_ContentPane_0 {
+            justify-content: center;
+            display: flex;
+        }
+
+        .divAlgo {
+            font-size: x-large;
+            color: gray;
+            font-family: Tahoma;
+        }
+
+        .activemove {
+            color: red;
+            font-size: 1.2em;
+        }
+
+        .algoGroup.algo4 {
+            color: cornflowerblue;
+        }
+
+        .borderlessPane {
+            border: none;
+        }
+
+        @media (max-width: 1482px) {
+            /*#divRubiksCubetitle {
+                margin-top: -7px;
+            }
+
+            td {
+                width: 17px;
+                height: 17px;
+            }
+
+            #imgRoo {
+                zoom: 80%;
+            }
+
+            #divRubiksCubeSubtitle {
+                top: 74px;
+            }*/
+        }
+
+        @media (max-width: 1200px) {
+            /*#divRubiksCubetitle {
+                margin-top: -4px;
+            }
+
+            td {
+                width: 14px;
+                height: 14px;
+            }
+
+            #imgRoo {
+                zoom: 60%;
+            }
+
+            #divRubiksCubeSubtitle {
+                top: 68px;
+            }*/
+        }
+
+        @media (max-width: 1000px) {
+            /*#divRubiksCubetitle {
+                margin: 2px 200px 0px 0px;
+                font-size: 5vw;
+            }
+
+            td {
+                width: 11px;
+                height: 11px;
+            }
+
+            #imgRoo {
+                visibility: collapse;
+            }
+
+            #divRubiksCubeSubtitle {
+                visibility: collapse;
+            }*/
+        }
+    </style>
+    <style type="text/css">
+        /* bring in the claro theme */
+        @import "http://ajax.googleapis.com/ajax/libs/dojo/1.5/dijit/themes/claro/claro.css";
+    </style>
+    <script type="text/javascript">
+        var dojoConfig = {
+            asyc: true,
+            isDebug: true,
+            packages: [
+                {
+                    name: "app",
+                    location: "/src/js/app"
+                }
+            ]
+        };
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="https://thecube.guru/wp-content/uploads/TheCubeGuru-favicon.ico">
+    <title>Step 2: Corners of the first face of the Rubik’s Cube</title>
+
+</head>
+
+<body class="claro">
+
+    <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:false" style="border:none;height:100%">
+
+        <div data-dojo-type="dijit/layout/ContentPane" style="border:1px solid black;padding-bottom: 0px;height:105px;background: linear-gradient(to right, rgba(200,200,200,1) 25%, #666666 50%,rgba(200,200,200,1) 75% );" data-dojo-props="region:'top'">
+            <div>
+                <div class="divImgRoo">
+                    <img id="imgRoo" src="Images/12Cubes.gif" />
+                </div>
+                <div class="divImgRooRight">
+                    <img id="imgRoo2" src="Images/12Cubes.gif" />
+                </div>
+                <div>
+                    <div id="divRubiksCubetitle" class="divRubtitle">RUBIK'S CUBE TUTOR<!--Rubik's Cube Tutor--></div>
+                    <div id="divRubiksCubeSubtitle">From Scrambled to Solved!</div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!--<div data-dojo-type="dijit/layout/ContentPane" style="border:none;width:20%" data-dojo-props="region:'leading'">
+            <div>
+                Sed ut perspiciatis, unde omnis intium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur adipisci[ng] velit, sed quia non-numquam [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit ntium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur adipisci[ng] velit, sed quia non-numquam [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit ntium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur adipisci[ng] velit, sed quia non-numquam [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit ntium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur adipisci[ng] velit, sed quia non-numquam [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit ste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur adipisci[ng] velit, sed quia non-numquam [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?
+            </div>
+
+        </div>-->
+        <!--<div data-dojo-type="dijit/layout/ContentPane" style="border:none;background-color:white" data-dojo-props="region:'center'">
+            <div data-dojo-type="dijit/layout/BorderContainer" style="width: 100%;height:100%; ">-->
+        <!--<div data-dojo-type="dijit/layout/ContentPane" style="background-color:yellow;width:1px" data-dojo-props="region:'top'">
+        </div>-->
+        <div data-dojo-type="dijit/layout/ContentPane" class="borderlessPane2" style="width:15%;height:100%;border-right:2px solid black" data-dojo-props="region:'leading'">
+            <!--<div>
+                To begin solving <i><b>your</b></i> cube, start by coloring <i><b>the tutor's cube</b></i> cube to match yours. Pick the six colors matching your cube by clicking on the color
+                patches below, then click on the 54 cube patches (called 'tiles') of the cube to set that color so it exactly matches your cube.  If you make a mistake, just click the tile again to unset that color.
+            </div>-->
+
+            <div style="margin-left:40px ;margin-top:20px; ">
+                <img src="Images/arrow.gif"  id="arrow1" style="display:none" />
+                <img src="Images/arrow.gif"   id="arrow2" style="display:none" />
+                <div>
+
+                    <canvas style="border:none;" id="canvas" width="200" height="150"></canvas>
+                    <div style="font-style:italic" id="uflLabel">
+                        Upper, Front, Left (U,F,L) View
+                    </div>
+                </div>
+                <div style="margin-top:20px">
+
+                    <canvas style="border:none;" id="backCanvas" width="200" height="150"></canvas>
+                    <div style="margin-left:10px; font-style:italic">Transparent Back, Down, Right (B,D,R) View</div>
+                </div>
+                <img src="Images/UnsetTile.png" id="unsettile" style="display:none" />
+                <!--<div style="margin-top:20px">
+
+                    <canvas style="border:none;" id="foldoutCanvas" width="150" height="180"></canvas>
+                    <div style="margin-left:10px; font-style:italic">Foldout View</div>
+                </div>-->
+                <div>
+
+                    <div>
+
+
+                        <div>
+                            <div style="font-style:italic;margin-bottom:5px;margin-top:10px" ;>
+                                <table>
+                                    <tr id="colorPalleteRow">
+                                        <td class="tdColor0 tdSelected" id="tdColor0"></td>
+                                        <td class="tdColor1" id="tdColor1"></td>
+                                        <td class="tdColor2" id="tdColor2"></td>
+                                        <td class="tdColor3" id="tdColor3"></td>
+                                        <td class="tdColor4" id="tdColor4"></td>
+                                        <td class="tdColor5" id="tdColor5"></td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div style="font-style:italic;margin-top:2px;">
+                                Color the tiles of the cube above (using any of the three cube views) to match your cube by selecting from the color pallete above and then clicking on a cube tile.
+                                If needed, double-click on on any of the pallete color patches to modify that color so that the 6 colors match your cube.  If you make a mistake, double-clicking
+                                the tile will reset it.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+
+
+            </div>
+        </div>
+        <div data-dojo-type="dijit/layout/ContentPane" style="overflow-y:scroll;overflow-x:hidden; height:100%" data-dojo-props="region:'center'">
+            <div>
+                <div id="divTutorial">
+                    <div>
+                        <div>
+                            <h3 class="cubeStep">STEP 1 - LEARN ABOUT THE CUBE</h3>
+                            If you've come to this site, chances are excellent that you are the less-than-proud owner of a Rubik's Cube that might look a little something like the mixed up Rubiks Cube to the right.
+                            You've probably just about abandoned all hope in figuring it out on your own.  Random moves aren't gonna get it done.
+                            Well, you are in good company my friend - millions of people have twiddled with a Rubik's Cube for hours or days before  giving up.  A little factoid: If every person on earth - all 8 billion people - randomly made a single turn of their own Rubik's Cube once every second,
+                            24 hours a day, 365 days a year, it would take on average about 170 years
+                            for just one person to stumble upon the solution!
+                            <div style="float:right;margin:5px;">
+                                <img src="Images/rubiks-cube-scrambled.jpg" />
+                            </div>
+                            Have no fear...Rubik's Cube Tutor is here.  In just a few minutes you will be well on your way to not just solving your cube but to actually <i>learning</i> how to solve
+                            it on your own.  But first, let's make sure
+                            that we have some basic terms defined.  Along the way, you'll learn a little about the Rubik's Cube too. Here's another little factoid to get you started - there are 43,252,003,274,489,856,000
+                            possible combinations!  Don't believe me?  Watch these math geeks from Numberphile explain it all in this <a href="https://www.youtube.com/watch?v=QV9k6dRQQe4">video</a>.
+
+                            <p>
+
+                            </p>
+                            Let's begin by defining the important parts of a Rubik's cube - hover over each term to make sure you understand each one.
+                            <ul>
+                                <li>TILES - Wow - there are 54 tiles on a standard 3x3 Rubik's Cube! That 9 tiles for each of the six faces.
+                                <li>FACES - There are 6 faces (AKA "sides") on the cube. Each face has a color defined by the center tile. </li>
+                                <li>
+                                    SIDES - Just like there are 6 faces, there are six sides.  However, instead of being defined by a color which never changes, they are defined by the current orientation of the
+                                    cube - something that of course is subject to change without notice!  Each side will be referred to in the instructions by a single letter - <U>U</U>pper, <U>F</U>ront
+                                    , <U>R</U>ight, <U>B</U>ack, <U>L</U>eft, and <U>D</U>own. Remember, as you re-orient the cube, the sides will change, but the faces never will.
+                                <li>
+                                    CUBE - On this website, the term "cube" will be taken to mean the moving parts that make up your whole Rubik's Cube - these of course are the center, edge, and corner cubes
+                                    (defined below).  There are 26 cubes that make up a Rubik's cube.
+                                </li>
+                                <li>
+                                    CENTER CUBE - Each face has a center tile with eight surrounding tiles.  Each center tile should have a unique color (typically white, red, yellow, green, blue, and orange).
+                                    In the instructions for solving the cube, you may see an instruction such as "bring the yellow face to the upper side."
+                                </li>
+                                <li>EDGE CUBE - There are 12 edge pieces.  Each edge cube has just two tiles.</li>
+                                <li>CORNER CUBE - There are 8 corner pieces. Each corner cube is comprised of three tiles.  </li>
+                                <li>RE-ORENT - </li>
+                                <li>TURN - </li>
+                                <li>ADDRESS - </li>
+                                <li>CLOCKWISE - </li>
+                                <li>COUNTER-CLOCKWISE - </li>
+                                <li>ALGORITHM - </li>
+                            </ul>
+                            <p>
+
+                                Another little factoid - There's a video on YouTube entitled, "How to Solve the Rubik's cube! (universal solution) that claims that it is "possible to use one simple set of moves to solve
+                                any scrambled Rubik's Cube!  And it's easy to remember".  That video has 11.6 million views the last time I checked and 104,000 subscribers...the crazy thing?  THE VIDEO IS BOGUS - IT
+                                DOESN'T WORK AT ALL.
+                                <div style="margin:5px;">
+                                    <img src="Images/bogus.png" />
+                                </div>
+                                I'm standing up to acuse the author of using a click-bait title to sell You-Tube advertising which, unlike user comments, <i>are</i> very much enabled. Don't even
+                                bother with it - it's already wasted hours for millions of people!
+                            </p>
+                        </div>
+                        <div style="margin-top:5px">
+                            <h3 class="cubeStep">STEP 2 - COLOR THE CUBE</h3> The Rubik's Cube tutor is here to help you not just solve your cube in a matter of minutes,  The first step in the process is to color the two cubes in the
+                            left pane to match your cube.  You'll notice that the first cube is a view where you can see to upper, front and left sides of the cube while the lower view is what you would see
+                            if those three sides were transparent - the back, down, and right faces.<p></p>
+                            If your cube has a yellow face, it's best to choose it as your upper face.  If you don't have a yellow side, that's OK too, just choose any color you would like.  Now, <b>
+                                click or double-click
+                                on any of the six color patches below to select or adjust that color
+                            </b>), then click on the two cubes at left until they match your cube.  If you make a mistake, just click that tile
+                            again to unset it.
+                            <p></p>
+                            <div>
+                                <div>
+                                    <table>
+                                        <tr>
+                                            <td class="tdColor0"></td>
+                                            <td class="tdColor1"></td>
+                                            <td class="tdColor2"></td>
+                                            <td class="tdColor3"></td>
+                                            <td class="tdColor4"></td>
+                                            <td class="tdColor5"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                            <p></p>
+                            totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab
+                            Sed ut perspiciatis, unde omnis intium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab
+                            <div style="margin:5px">
+                                <div style="float:right">
+                                    <img align="right" src="Images/rubiksCube.png" />
+                                </div>
+
+                            </div>
+                            Sed ut perspiciatis, unde omnis intium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab udantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab
+                            Sed ut perspiciatis, unde omnis intium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab
+                            Sed ut perspiciatis, unde omnis intium doloremloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab Sed ut perspiciatis, unde omnis intium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab Sed ut perspiciatis, unde omnis intium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab Sed ut perspiciatis, unde omnis intium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab Sed ut perspiciatis, unde omnis intium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab Sed ut perspiciatis, unde omnis intium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab Sed ut perspiciatis, unde omnis intium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab Sed ut perspiciatis, unde omnis intium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab Sed ut perspiciatis, unde omnis intium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab Sed ut perspiciatis, unde omnis intium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab Sed ut perspiciatis, unde omnis intium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab Sed ut perspiciatis, unde omnis intium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab Sed ut perspiciatis, unde omnis intium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab
+                            Sed ut perspiciatis, unde omnis intium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab
+                            Sed ut perspiciatis, unde omnis intium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis etm, totam rem aperiam eaque ipsa, quae ab illo
+                        </div>
+                        <div style="margin:5px">
+                            <div style="float:right">
+                                <img align="right" src="Images/rubiksCube.png" />
+                            </div>
+
+                        </div>
+
+                        inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullamt dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ut dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ut dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ut dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ut dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ut dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ut dolore magnam <!--aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ut dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ut dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ut dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ut dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ut dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ut dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ut dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ut dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ut dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ut dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ut dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem u corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit ntium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam volup-->
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div data-dojo-type="dijit/layout/ContentPane" class="borderlessPane" style="width:15%;overflow-x:hidden;" data-dojo-props="region:'trailing'">
+
+            <div style="position: relative;  margin-top: -20px;height:100%;">
+
+
+
+                <div style="height: 35px; width: 100%;   background: #eeeeee;  -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);  -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);">
+                    <h3>23 of 57 moves completed (34%)</h3>
+                </div>
+
+                <!--<div id="divTheAlhorithm">SOLUTION - <span> 0 </span> of <span> 67 steps completed. </span><span>37% completed.</span> </div>-->
+                <!--<div align="right" style="position:absolute;bottom:0px;right:1px">
+                    <button id="btnUseVoice" class='btnOrientButton123' data-dojo-type="dijit/form/Button">
+                        Voice Commands...
+                    </button>
+                    <button id="btnNextTurn" class='btnOrientButton123' data-dojo-type="dijit/form/Button">
+                        Next Turn
+                    </button>
+                    <button id="btnNextAlgo" class='btnOrientButton123' data-dojo-type="dijit/form/Button">
+                        Next Algo
+                    </button>
+                    <button id="btnNextStep" class='btnOrientButton123' data-dojo-type="dijit/form/Button">
+                        Next Step
+                    </button>
+                </div>-->
+                <div style="overflow-x:auto;    top:50px;    left:0;right:0;    bottom:0;    position:absolute;">
+
+
+                    <div class="divAlgo">
+                        <span class="algoGroup algo0"><span class="algoNumber">(1)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><span>[R>F]</span></span><br />
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+                        <span class="algoGroup algo0">
+                            <span class="algoNumber">(2)</span><span>F</span><span>L</span><span>R'</span><span>U'</span><span>D</span><br />
+                        </span>
+
+
+                    </div>
+
+                    <div>
+                        <textarea id="txtCubeCoords">
+                            3,0,0,0,254$
+                            8,26;17,197;107,298;107,94;285,52;270,232;107,299:107,94;10,26;171,3;285,52
+                            @3,0,0,0,254$
+                            66,18;170,78;166,273:124,9;236,64;229,247:39,222;38,45;198,14:68,255;66,65;238,31:11,89;105,166;279,116:15,147;106,237;276,177
+                        </textarea>
+                        <textarea id="txtBackCubeCoords" style="height:200px">
+
+                            1,0,255,0,254$
+                            66,17;74,183;166,274:
+                            124,9;122,169;228,247:
+                            12,88;167,59;286,116:
+                            14,146;166,110;276,177:
+                            38,222;192,175;199,15:
+                            68,256;228,202;243,32
+                            @1,222,222,222,255
+                            $169,3;165,156;17,197:165,156;270,232
+                            @3,0,0,0,254$
+                            8,27;17,197;105,298;107,94;292,52;270,232;107,298:107,94;8,27;169,3;293,52
+                        </textarea>
+
+                        <br />
+
+                        <div id="divCanvasCoords">x,y</div>
+                        <button id="btnDrawCube">Draw Cube</button>
+                        <div class="xdivCubeMover">
+                            <div>
+
+                                <div>
+
+                                    <h2>Re-orient Cube</h2>
+                                    <div>
+                                        <button id="btnFrontToLeft" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            F > L
+                                        </button>
+                                        <button id="btnFrontToRight" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            F > R
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <button id="btnUpToFront" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            U > F
+                                        </button>
+                                        <button id="btnUpToBack" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            U > B
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <button id="btnUpToLeft" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            U > L
+                                        </button>
+                                        <button id="btnUpToRight" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            U > R
+                                        </button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2>Rotate Cube</h2>
+                                    <div>
+                                        <button id="btnLeft" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            left
+                                        </button>
+                                        <button id="btnLeftPrime" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            LEFT
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <button id="btnRight" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            right
+                                        </button>
+                                        <button id="btnRightPrime" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            RIGHT
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <button id="btnFront" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            front
+                                        </button>
+                                        <button id="btnFrontPrime" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            FRONT
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <button id="btnBack" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            back
+                                        </button>
+                                        <button id="btnBackPrime" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            BACK
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <button id="btnUp" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            up
+                                        </button>
+                                        <button id="btnUpPrime" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            UP
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <button id="btnDown" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            down
+                                        </button>
+                                        <button id="btnDownPrime" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            DOWN
+                                        </button>
+                                    </div>
+
+                                    <div>
+                                        <button id="btnUpToLeft2" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            U > L
+                                        </button>
+                                        <button id="btnUpToRight2" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            U > R
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <button id="btnGetPixel" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            pix
+                                        </button>
+                                        <button id="btnUpToBack2" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            U > B
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <button id="btnUpToLeft22" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            U > L
+                                        </button>
+                                        <button id="btnUpToRight22" class='btnOrientButton' data-dojo-type="dijit/form/Button">
+                                            U > R
+                                        </button>
+                                    </div>
+                                    <br /><br /><br />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!--</div>
+
+    </div>-->
+    <script type="text/javascript">
+
+        require(['dojo/dom', 'dojo/dom-construct', 'app/RubiksCube', "dojo/on", 'app/RubiksCubeView',
+            "dojo/parser", "dijit/form/Button", "dijit/layout/BorderContainer", "dijit/layout/ContentPane",
+            "dijit/layout/AccordionPane", "dijit/registry", "dojox/collections/Queue","dojo/dom-class","dojo/dom-style", "dojo/domReady!"
+        ], function (dom, domConstruct, rubiksCube, on, rubiksCubeView, parser, button, bc, cp, ap, registry, queue,domClass,domStyle) {
+            console.log("require");
+            parser.parse();
+            var rcv = new rubiksCubeView();
+
+            var _arrowIndex = -1;
+            on(dom.byId("uflLabel"), "click", function (e) {
+                _arrowIndex++;
+                if (_arrowIndex > 9) {
+                    _arrowIndex = 0;
+                }
+                var direction = ["Upper", "UpperPrime", "Left", "LeftPrime", "Front", "FrontPrime", "Right", "RightPrime", "Down", "DownPrime"][_arrowIndex];
+
+                domClass.remove(dom.byId("arrow1"), "arrowUpper1");
+                domClass.remove(dom.byId("arrow1"), "arrowLeft1");
+                domClass.remove(dom.byId("arrow1"), "arrowRight1");
+                domClass.remove(dom.byId("arrow1"), "arrowFront1");
+                domClass.remove(dom.byId("arrow1"), "arrowDown1");
+                domClass.remove(dom.byId("arrow1"), "arrowUpperPrime1");
+                domClass.remove(dom.byId("arrow1"), "arrowLeftPrime1");
+                domClass.remove(dom.byId("arrow1"), "arrowRightPrime1");
+                domClass.remove(dom.byId("arrow1"), "arrowFrontPrime1");
+                domClass.remove(dom.byId("arrow1"), "arrowDownPrime1");
+
+                domClass.remove(dom.byId("arrow2"), "arrowUpper2");
+                domClass.remove(dom.byId("arrow2"), "arrowLeft2");
+                domClass.remove(dom.byId("arrow2"), "arrowRight2");
+                domClass.remove(dom.byId("arrow2"), "arrowFront2");
+                domClass.remove(dom.byId("arrow2"), "arrowDown2");
+                domClass.remove(dom.byId("arrow2"), "arrowUpperPrime2");
+                domClass.remove(dom.byId("arrow2"), "arrowLeftPrime2");
+                domClass.remove(dom.byId("arrow2"), "arrowRightPrime2");
+                domClass.remove(dom.byId("arrow2"), "arrowFrontPrime2");
+                domClass.remove(dom.byId("arrow2"), "arrowDownPrime2");
+
+
+                domClass.add(dom.byId("arrow1"), "arrow" + direction + "1");
+                domClass.add(dom.byId("arrow2"), "arrow" + direction + "2");
+
+                domStyle.set(dom.byId("arrow1"), "display", "inherit");
+                domStyle.set(dom.byId("arrow2"), "display", "inherit");
+
+            });
+            
+
+        });
+        
+        function showArrows() {
+
+
+        }
+    </script>
+
+
+</body>
+
+</html>
