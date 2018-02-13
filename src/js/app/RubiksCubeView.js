@@ -1,7 +1,7 @@
 ﻿
 define(["dojo/_base/declare", "dojo/on", "dojo/dom", "dojo/dom-style", 'app/RubiksCube', "dojox/collections/Queue", "dojox/collections/Dictionary",
-    "dojo/_base/array", "dojox/timing", "dojox/math/random/Simple", "dojo/dom-class"],
-    function (declare, on, dom,domStyle, RubiksCube, Queue, Dictionary, array,t, rand,domClass) {
+    "dojo/_base/array", "dojox/timing", "dojox/math/random/Simple", "dojo/dom-class", "dijit/Dialog"],
+    function (declare, on, dom,domStyle, RubiksCube, Queue, Dictionary, array,t, rand,domClass,Dialog) {
         var _canvas;
         var _backCanvas;
         var _ctxBack;
@@ -329,6 +329,18 @@ define(["dojo/_base/declare", "dojo/on", "dojo/dom", "dojo/dom-style", 'app/Rubi
 
 
                 });
+
+
+                on(dom.byId("btnSetup"), "click", function (e) {
+                    myDialog = new Dialog({
+                        title: "Rubik's Cube Tutor Settings",
+                        //content: "Test content.",
+                        href:"../../src/html/setup.html",
+                        style: "width: 300px"
+                    });
+                    myDialog.show();
+                });
+
                 on(dom.byId("canvas"), "mousemove", function (e) {
 
                     var canvasCoords = GetMousePos(_canvas, e);
